@@ -1,0 +1,21 @@
+{
+  "name": "fine-bakery",
+  "version": "1.0.0",
+  "description": "college practice",
+  "main": "app.js",
+  "repository": "https://github.com/egor-teapot/fine-bakery",
+  "author": "Egor-Zhukovskiy",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "yarn app.js",
+    "devstart": "yarn nodemon app.js"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.2",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
