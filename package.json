@@ -8,8 +8,8 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "yarn app.js",
-    "devstart": "yarn nodemon app.js"
+    "start": "node ./src/server/server.js",
+    "devstart": "nodemon ./src/server/server.js"
   },
   "dependencies": {
     "bootstrap": "^5.2.2",
