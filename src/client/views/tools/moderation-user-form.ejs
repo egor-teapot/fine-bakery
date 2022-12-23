@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+    <div>
+        <label>Id:</label>
+        <p id="uuid"><%= user[0]._id %></p>
+        <label>Name:</label>
+        <input id="name" name="name" value="<%= user[0].name %>">
+        <label>Email:</label>
+        <input id="email" name="email" type="email" value="<%= user[0].email %>">
+        <label>Password:</label>
+        <input id="password" name="password" value="<%= user[0].password %>">
+        <label>Role:</label>
+        <input id="role" name="password" value="<%= user[0].role %>">
+        <a style="text-decoration: none; color: black; background: #ddd" href="/tools/moderation">Back</a>
+        <button id="update" style="text-decoration: none; color: black; background: #ddd" href="">Update</button>
+        <button id="delete" style="text-decoration: none; color: black; background: #ddd" href="">Delete</button>
+    </div>
+    <script>
+        document.getElementById("update").addEventListener('click', () => {
+            console.log("update")
+            fetch('/tools/moderation/create/user', {
+                method: "POST",
+                headers: {
+                    'Accept': 'application/json', 
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    uuid: document.getElementById('uuid').innerText,
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    password: document.getElementById('password').value,
+                    role: document.getElementById('role').value
+                })
+            })
+                .then(res => {
+                    if(res.ok) console.log("update is ok")
+                }).catch(err => console.log("update err"))
+        })
+
+        document.getElementById("delete").addEventListener('click', () => {
+            console.log("delete")
+            fetch('/tools/moderation/delete', {
+                method: "POST",
+                headers: {
+                    'Accept': 'application/json', 
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    uuid: document.getElementById('uuid').innerText,
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    password: document.getElementById('password').value,
+                    role: document.getElementById('role').value
+                })
+            })
+                .then(res => {
+                    if(res.ok) console.log("delete is ok")
+                }).catch(err => console.log("deleteerr"))
+        })
+
+    </script>
+</body>
+</html>

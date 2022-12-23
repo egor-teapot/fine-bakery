@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+    <h1>modaration page</h1>
+    <p><a href="/tools/moderation/create/user">create user</a></p>
+    <p><a href="/">main</a></p>
+    <section class="list">
+        <% for(i=0; i < user.length; i++) { %>
+            <a style="text-decoration: none; color: black" href="moderation/<%= user[i]._id %>">
+            <div style="background: #ddd">
+                    <label>Id: <span><%= user[i]._id %></span></label>
+                    <p>Name: <span><%= user[i].name %></span></p>
+                    <p>Email: <span><%= user[i].email %></span></p>
+                    <p>Role: <span><%= user[i].role %></span></p>
+                </div>
+            </a>           
+        <% } %>
+    </section>
+</body>
+</html>
