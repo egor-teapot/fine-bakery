@@ -38,4 +38,11 @@ yarn start
 yarn devstart
 ```
 
+введите в строку адреса
+```
+http://localhost:4127/
+```
+
+Приятного пользования
+
 <br>
